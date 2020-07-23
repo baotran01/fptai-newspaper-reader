@@ -1,45 +1,48 @@
 /*global chrome*/
 
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 import client from "./axios";
 
-const key  = process.env.REACT_APP_API_KEY
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       audioFile: "",
-      showAudio: false
-    }
-    this.renderAudio = this.renderAudio.bind(this)
+      showAudio: false,
+      newsData: "",
+    };
+    this.renderAudio = this.renderAudio.bind(this);
   }
-  
+
   renderAudio() {
-    client.post('/api/scrape', {
-      url: window.location.href
-    })
-    .then(res => {
-      const data = res.data
-      return fetch('https://api.fpt.ai/hmi/tts/v5', {
-        method: 'POST',
-        headers: {
-          'api_key': key
-        },
-        body: data
+    client
+      .post("/api/scrape", {
+        url: window.location.href,
       })
-      .then(response => response.json())
-      .then(jsondata => this.setState({audioFile: jsondata.async, showAudio: true}))
-    })
+      .then((res) => {
+        this.setState({
+          audioFile: res.data.async,
+          showAudio: true,
+        })
+      });
   }
 
   render() {
     return (
       <div className="App">
         <h1>My Extension</h1>
-        {this.state.showAudio === false &&<button onClick = {this.renderAudio}>Audio</button>}
-        {this.state.showAudio === true && <audio src= {this.state.audioFile} controls/>}
+        {this.state.showAudio === false && (
+          <button onClick={this.renderAudio}>Audio</button>
+        )}
+        {this.state.showAudio === true && (
+          <div>
+            <audio src={this.state.audioFile} controls />
+            <br/>
+            {/* <div className = 'displayText'>{this.state.newsData}</div> */}
+          </div>
+        )}
       </div>
     );
   }

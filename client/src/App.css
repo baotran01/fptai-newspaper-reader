@@ -6,6 +6,12 @@ audio {
   outline: none;
 }
 
+.displayText {
+  white-space: pre-wrap;
+}
+
+
+
 
 
 
