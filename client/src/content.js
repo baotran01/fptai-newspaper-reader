@@ -1,5 +1,6 @@
 /*global chrome*/
 /* src/content.js */
+// import "bootstrap/dist/css/bootstrap.css"
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Frame, { FrameContextConsumer }from 'react-frame-component';

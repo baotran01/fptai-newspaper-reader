@@ -1,9 +1,11 @@
 /*global chrome*/
 
 import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import client from "./axios";
 
+import client from "./axios";
+import { Navbar } from "react-bootstrap";
 
 class App extends Component {
   constructor() {
@@ -25,21 +27,25 @@ class App extends Component {
         this.setState({
           audioFile: res.data.async,
           showAudio: true,
-        })
+        });
       });
   }
 
   render() {
     return (
       <div className="App">
-        <h1>My Extension</h1>
+        <div>
+          <Navbar bg="dark" variant="dark">
+            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          </Navbar>
+        </div>
         {this.state.showAudio === false && (
           <button onClick={this.renderAudio}>Audio</button>
         )}
         {this.state.showAudio === true && (
           <div>
             <audio src={this.state.audioFile} controls />
-            <br/>
+            <br />
             {/* <div className = 'displayText'>{this.state.newsData}</div> */}
           </div>
         )}
