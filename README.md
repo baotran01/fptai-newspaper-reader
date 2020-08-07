@@ -35,7 +35,7 @@ A Chrome Extension for reading Vietnamese Online Newspapers using Text to Speech
 - [Express](https://expressjs.com/) - Server Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
 - [FastAPI](https://fastapi.tiangolo.com/) - Server Framework
-- [nltk](https://www.nltk.org/) - Natural Language Toolkit
+- [NLTK](https://www.nltk.org/) - Natural Language Toolkit
 
 ### 🔧 Installation
 Set up the server
