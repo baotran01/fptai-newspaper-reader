@@ -4,10 +4,31 @@
 
 audio {
   outline: none;
+  position: absolute;
+  left: 17%;
+  top:43%;
 }
 
 .displayText {
   white-space: pre-wrap;
+}
+
+.button {
+  text-align: center;
+  position: absolute;
+  left: 40%;
+  top:40%;
+}
+
+.navName {
+  position: relative;
+  left: 30%;
+}
+
+.spinner {
+  position: absolute;
+  top: 45%;
+  left: 48%;
 }
 
 
