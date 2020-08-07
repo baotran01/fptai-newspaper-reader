@@ -2,8 +2,10 @@ from fastapi import FastAPI
 from newspaper import Article
 import requests
 import nltk
-from api_key import api_key
 import time
+import os 
+api_key = os.environ.get('MY_API_KEY', None) 
+
 
 app = FastAPI()
 
