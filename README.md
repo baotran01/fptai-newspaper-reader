@@ -24,6 +24,7 @@
 ## 📝 Table of Contents
 - [About](#about)
 - [Built Using](#built_using)
+- [Installation)(#installation)
 - [Authors](#authors)
 
 ## 🧐 About <a name = "about"></a>
@@ -37,7 +38,7 @@ A Chrome Extension for reading Vietnamese Online Newspapers using Text to Speech
 - [FastAPI](https://fastapi.tiangolo.com/) - Server Framework
 - [NLTK](https://www.nltk.org/) - Natural Language Toolkit
 
-### 🔧 Installation
+### 🔧 Installation <a name = "installation"></a>
 Set up the server
 
 ```
